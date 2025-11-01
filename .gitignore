@@ -12,3 +12,6 @@ yarn-error.log*
 
 # System files
 .DS_Store
+
+# Local uploads (do not track uploaded images)
+/public/appetizer_uploads/

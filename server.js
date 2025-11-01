@@ -31,7 +31,6 @@ app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, 'views/admin'))
 
 app.use(express.static(path.join(__dirname, 'public/appetizer_uploads')))
-// app.use(express.static(path.join(__dirname, 'public/userUploads')))
 
 // Use BodyParser for GET data from form body
 app.use(bodyParser.json())
@@ -42,12 +41,8 @@ app.use(cors())
 // ---------------------------------------------------------------------------
 
 // Appetizers
-const appetizerRoute = require('./router/appetizer_router')                              // For User fetch All Products
+const appetizerRoute = require('./router/appetizer_router')                              // Fetch All Products
 app.use('/api/appetizer', appetizerRoute)
-
-// // Client-User
-// const userRoute = require('./router/UserRouter')                                             // User Auth
-// app.use('/api', userRoute)
 
 // ---------------------------------------------------------------------------
 

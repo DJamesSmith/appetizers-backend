@@ -8,6 +8,7 @@ const path = require('path')
 const cookieParser = require('cookie-parser')
 const flash = require('connect-flash')
 const session = require('express-session')
+const fs = require('fs')
 require("dotenv").config()
 
 const app = express()
@@ -31,6 +32,13 @@ app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, 'views/admin'))
 
 app.use(express.static(path.join(__dirname, 'public/appetizer_uploads')))
+
+// Ensure upload directory exists at runtime
+const uploadDir = path.join(process.cwd(), 'public', 'appetizer_uploads');
+if (!fs.existsSync(uploadDir)) {
+  fs.mkdirSync(uploadDir, { recursive: true });
+  console.log('✅ Created upload directory:', uploadDir);
+}
 
 // Use BodyParser for GET data from form body
 app.use(bodyParser.json())

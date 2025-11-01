@@ -17,9 +17,7 @@ exports.allAppetizers = async (req, res) => {
             calories: appetizer.calories,
             price: appetizer.price,
             status: appetizer.status,
-            imageURL: appetizer.imageURL
-                ? `${req.protocol}://${req.get('host')}/public/appetizer_uploads/${appetizer.imageURL}`
-                : null,
+            imageURL: appetizer.imageURL,
             createdAt: appetizer.createdAt,
             updatedAt: appetizer.updatedAt
         }))
@@ -97,9 +95,7 @@ exports.appetizerDetails = async (req, res) => {
                 calories: appetizer.calories,
                 price: appetizer.price,
                 status: appetizer.status,
-                imageURL: appetizer.imageURL
-                    ? `${req.protocol}://${req.get('host')}/public/appetizer_uploads/${appetizer.imageURL}`
-                    : null,
+                imageURL: appetizer.imageURL,
                 createdAt: appetizer.createdAt,
                 updatedAt: appetizer.updatedAt,
             },

@@ -1,0 +1,63 @@
+// @ts-nocheck
+
+const express = require('express')
+const mongoose = require('mongoose')
+const cors = require('cors')
+const bodyParser = require('body-parser')
+const path = require('path')
+const cookieParser = require('cookie-parser')
+const flash = require('connect-flash')
+const session = require('express-session')
+require("dotenv").config()
+
+const app = express()
+app.use(cookieParser())
+
+app.use(express.json({ limit: "30mb", extended: true }))
+app.use(express.urlencoded({ extended: true }))
+
+mongoose.set('strictQuery', true)
+
+app.use(session({
+    secret: 'secret',
+    cookie: { maxAge: 600000 },
+    resave: false,
+    saveUninitialized: false
+}))
+
+app.use(flash())
+
+app.set('view engine', 'ejs')
+app.set('views', path.join(__dirname, 'views/admin'))
+
+app.use(express.static(path.join(__dirname, 'public/appetizer_uploads')))
+// app.use(express.static(path.join(__dirname, 'public/userUploads')))
+
+// Use BodyParser for GET data from form body
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: true }))
+
+app.use(cors())
+
+// ---------------------------------------------------------------------------
+
+// Appetizers
+const appetizerRoute = require('./router/appetizer_router')                              // For User fetch All Products
+app.use('/api/appetizer', appetizerRoute)
+
+// // Client-User
+// const userRoute = require('./router/UserRouter')                                             // User Auth
+// app.use('/api', userRoute)
+
+// ---------------------------------------------------------------------------
+
+const port = process.env.PORT
+
+mongoose.connect(process.env.MONGO_URL)
+    .then(() => {
+        app.listen(port, () => {
+            console.log(`DB & Server Connected, listening on http://localhost:${port}/api`)
+        })
+    }).catch(error => {
+        console.log(error)
+    })

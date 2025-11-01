@@ -1,0 +1,52 @@
+{
+  "name": "appetizers-backend",
+  "version": "1.0.0",
+  "description": "A Node.js + Express backend that replicates Sean Allen’s Appetizers API. Created as a learning project to serve the same data structure and endpoints, hosted using Render.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "homepage": "https://github.com/DJamesSmith/swiftui-fundamentals#readme",
+  "bugs": {
+    "url": "https://github.com/DJamesSmith/swiftui-fundamentals/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DJamesSmith/swiftui-fundamentals.git"
+  },
+  "keywords": [
+    "nodejs",
+    "expressjs",
+    "mongodb",
+    "reactjs",
+    "ejs",
+    "swiftui",
+    "ios",
+    "backend",
+    "frontend"
+  ],
+  "license": "ISC",
+  "author": "Dion James Smith",
+  "type": "commonjs",
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "body-parser": "^2.2.0",
+    "connect-flash": "^0.1.1",
+    "connect-mongodb-session": "^5.0.0",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "express-session": "^1.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.19.2",
+    "multer": "^2.0.2",
+    "nodemailer": "^7.0.10"
+  },
+  "devDependencies": {
+    "@types/node": "^24.9.2",
+    "nodemon": "^3.1.10"
+  }
+}

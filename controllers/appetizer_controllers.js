@@ -46,15 +46,11 @@ exports.createAppetizer = async (req, res) => {
 
         let imageURL = ''
 
-        // if (req.file) {
-        //     imageURL = req.file.filename
-        //     const filePath = `public/appetizer_uploads/${imageURL}`
-        //     const base64Image = await imageToBase64(filePath)
-        //     imageURL = base64Image
-        // }
-
         if (req.file) {
             imageURL = req.file.filename
+            const filePath = `public/appetizer_uploads/${imageURL}`
+            const base64Image = await imageToBase64(filePath)
+            imageURL = base64Image
         }
 
         const newAppetizer = await new Appetizer({
@@ -130,15 +126,11 @@ exports.updateAppetizer = async (req, res) => {
             description: description
         }
 
-        // if (req.file) {
-        //     const imageURL = req.file.filename
-        //     const filePath = `public/appetizer_uploads/${imageURL}`
-        //     const base64Image = await imageToBase64(filePath)
-        //     updatedFields.imageURL = base64Image
-        // }
-
         if (req.file) {
-            updatedFields.imageURL = req.file.filename
+            const imageURL = req.file.filename
+            const filePath = `public/appetizer_uploads/${imageURL}`
+            const base64Image = await imageToBase64(filePath)
+            updatedFields.imageURL = base64Image
         }
 
         const updatedAppetizer = await Appetizer.findByIdAndUpdate(appetizerId, updatedFields, { new: true })

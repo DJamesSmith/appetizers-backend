@@ -1,25 +1,27 @@
-# 🍽️ Appetizers Backend
+# <img width="50" height="50" alt="image" src="https://github.com/user-attachments/assets/fa17865a-1dd6-430a-bff6-a711f4dda56f" /> Appetizers Backend
+
 
 This project is inspired by Sean Allen’s **SwiftUI Fundamentals** course — specifically the *Appetizers* app.  
-In his version, the data comes from a static JSON file, but I wanted to take it further by building **my own real API** from scratch.
+In his version, Sean built a simple backend API to serve appetizer data to the SwiftUI app.  
+I decided to build my **own version** of that backend — not by copying, but by creating everything from scratch in my own way.
 
-Instead of relying on free or paid APIs that might limit what data I can access or how it’s structured, I decided to create a backend myself.  
-This gives me the freedom to design the data exactly the way I need it for my app — without restrictions, limits, or dependency on external services.
+I wanted to understand how each piece fits together, from API design to database connections.  
+By building the backend myself, I’m not limited by what any free or paid APIs provide — I decide what data exists, how it’s structured, and how it’s delivered.
 
 ### 💡 Why I’m Building My Own API
 I wanted full control over the data, structure, and endpoints.  
-By handling everything myself, I can:
-- Create the exact data models I want  
-- Design endpoints that fit perfectly with my SwiftUI frontend  
-- Experiment and learn backend concepts hands-on  
-- Build a complete, self-contained ecosystem for my app
+By creating my own API, I can:
+- Design data models that perfectly match my app’s needs  
+- Experiment with custom endpoints and relationships  
+- Learn how to handle image uploads, database operations, and API logic  
+- Build a backend that’s completely flexible and under my control  
 
 ### ⚙️ Tech Stack (Planned)
 - **Node.js + Express** – backend framework  
-- **MongoDB** – database management  
-- **Multer** – for handling image uploads  
-- **Custom API endpoints** – to serve appetizer data to my SwiftUI app  
+- **MongoDB** – for data storage  
+- **Multer** – to handle image uploads  
+- **Custom API endpoints** – to serve appetizer data to my SwiftUI frontend  
 
 ---
 
-> 🧠 This project is all about learning, building, and gaining full control — combining my SwiftUI frontend with a backend I completely understand and own.
+> 🧠 This project is part learning, part building — my way of understanding the backend side of app development while having complete freedom over how data flows between my API and SwiftUI app.
